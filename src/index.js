@@ -10,6 +10,8 @@ const stores = {
   movieStore: new MovieStore(),
 };
 
+stores.movieStore.queryListOfMovies();
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider {...stores}>
