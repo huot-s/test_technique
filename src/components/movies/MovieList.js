@@ -1,5 +1,6 @@
 import { inject, observer } from "mobx-react";
 import React from "react";
+import MovieDetails from "../movies/MovieDetails";
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,16 +10,17 @@ import Grid from '@mui/material/Unstable_Grid2';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
-
 const MovieList = ({ movieStore }) => {
-  return <Grid container spacing={2}>{movieStore.popularMovies.map(movie => 
-    <Grid xs={12} sm={6} md={3}><Card sx={{height: "100%", display: "flex",
+  
+  return <div><MovieDetails/>
+  <Grid container spacing={2}>{movieStore.trendingMoviesList.map(movie => 
+    <Grid xs={12} sm={6} md={3} key={movie.id}><Card sx={{height: "100%", display: "flex",
     flexDirection: "column",}}>
       <CardMedia
           component="img"
           height="200"
           image={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
-          alt={movie.name}
+          alt={movie.title}
         />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -34,10 +36,15 @@ const MovieList = ({ movieStore }) => {
         </Typography>
       </CardContent>
       <CardActions sx={{mt: "auto" }}>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={() => {
+          movieStore.queryMovieReviews(movie.id);
+          movieStore.setCurrentMovie(movie);
+          movieStore.setDisplay(true);
+        }
+          }>Learn More</Button>
       </CardActions>        
     </Card></Grid>
-  )}</Grid>;
+  )}</Grid></div>;
 };
 
 export default inject("movieStore")(observer(MovieList));
