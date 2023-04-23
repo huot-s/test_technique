@@ -6,12 +6,14 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Unstable_Grid2';
-
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
 
 
 const MovieList = ({ movieStore }) => {
   return <Grid container spacing={2}>{movieStore.popularMovies.map(movie => 
-    <Grid xs={3}><Card sx={{height: "100%"}}>
+    <Grid xs={12} sm={6} md={3}><Card sx={{height: "100%", display: "flex",
+    flexDirection: "column",}}>
       <CardMedia
           component="img"
           height="200"
@@ -30,7 +32,10 @@ const MovieList = ({ movieStore }) => {
         <Typography variant="body2" color="text.secondary">
           {movie.overview}
         </Typography>
-      </CardContent>        
+      </CardContent>
+      <CardActions sx={{mt: "auto" }}>
+        <Button size="small">Learn More</Button>
+      </CardActions>        
     </Card></Grid>
   )}</Grid>;
 };
