@@ -5,13 +5,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
-import Container from '@mui/material/Container';
+import Grid from '@mui/material/Unstable_Grid2';
 
 
 
 const MovieList = ({ movieStore }) => {
-  return <Container maxWidth="sm">{movieStore.popularMovies.map(movie => 
-    <div><Card sx={{ width: 450 }}>
+  return <Grid container spacing={2}>{movieStore.popularMovies.map(movie => 
+    <Grid xs={3}><Card sx={{height: "100%"}}>
       <CardMedia
           component="img"
           height="200"
@@ -20,14 +20,19 @@ const MovieList = ({ movieStore }) => {
         />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {movie.name}
+          {movie.title}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Released on {movie.release_date}<br/>
+          Rated {movie.vote_average}/10 ({movie.vote_count} votes)<br/>
+          Genres: {movieStore.genres.filter(genre => movie.genre_ids.includes(genre.id)).map(genre => genre.name + " ")}
+        </Typography><br/>
         <Typography variant="body2" color="text.secondary">
           {movie.overview}
         </Typography>
       </CardContent>        
-    </Card><br/></div>
-  )}</Container>;
+    </Card></Grid>
+  )}</Grid>;
 };
 
 export default inject("movieStore")(observer(MovieList));
