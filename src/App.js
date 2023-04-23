@@ -18,7 +18,7 @@ const App = () => {
     <AppBar position="static">
       <Container maxWidth="l">
         <Toolbar disableGutters>
-          <LiveTvIcon sx={{ fontSize: 40, display: { xs: 'none', md: 'flex' }, mr: 2 }} />
+          <LiveTvIcon sx={{ fontSize: 40,  mr: 2 }} />
           <Typography
             variant="h6"
             noWrap
@@ -26,7 +26,6 @@ const App = () => {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
