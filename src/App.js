@@ -3,27 +3,43 @@ import { css } from '@emotion/css'
 
 import MoviePage from "./components/pages/MoviePage";
 
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+
 const App = () => {
   return (
     <div className={css`
       min-height: 100vh;
       background-color: #F2F2F2;
     `}>
-      <header className={css`
-        position: relative;
-        height: 150px;
-        line-height: 150px;
-        background-color: #555555;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 1.5rem;
-      `}>
-        Bienvenue dans Ask for movies
-      </header>
+    <AppBar position="static">
+      <Container maxWidth="l">
+        <Toolbar disableGutters>
+          <LiveTvIcon sx={{ fontSize: 40, display: { xs: 'none', md: 'flex' }, mr: 2 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            ASK FOR MOVIE
+          </Typography>
+        </Toolbar>
+      </Container>
+    </AppBar>
       <main className={css`
-        min-height: calc(100vh - 150px);
-        display: flex;
+        margin: 20px;
       `}>
         <MoviePage />
       </main>
