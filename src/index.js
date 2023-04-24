@@ -11,6 +11,7 @@ const stores = {
 };
 
 stores.movieStore.queryListOfMovies();
+stores.movieStore.queryListOfGenres();
 
 ReactDOM.render(
   <React.StrictMode>
