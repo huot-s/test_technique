@@ -9,9 +9,9 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 const MainPage = ({ movieStore }) => {
   return (
     <div>
-      <Fab sx={{position: 'fixed',  bottom: 50,  right: 50,}} onClick={movieStore.filterFrenchMovies} variant="extended" color="success">
+      <Fab sx={{position: 'fixed',  bottom: 50,  right: 50,}} onClick={() => movieStore.switchDisplayMode()} variant="extended" color={movieStore.frenchMode ? "success": "primary"}>
         <FilterAltIcon sx={{ mr: 1 }} />
-        French mode
+        {movieStore.frenchMode ? "International" : "French"} mode
       </Fab>
       <MovieList />
     </div>
