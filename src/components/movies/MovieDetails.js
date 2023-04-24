@@ -53,12 +53,15 @@ const MovieDetails = ({ movieStore }) => {
       </Stack>
         
             <br/>
+            <Typography gutterBottom variant="h5">
+            💯 Reviews 💯
+        </Typography>
             {movieStore.currentDisplayMovieReviews ? movieStore.currentDisplayMovieReviews.map(review => 
             <div key={review.id}>
-                <Typography variant="subtitle1" sx={{fontWeight: "bold"}}>
-                {review.author_details.username} ({review.author_details.rating}/10 <StarRateIcon fontSize="small" sx={{ color: "#fcba03" }}/>)
+                <Typography variant="subtitle1">
+                <strong>{review.author_details.username} ({review.author_details.rating}/10 <StarRateIcon fontSize="small" sx={{ color: "#fcba03" }}/>)</strong> on {review.created_at.substring(0, 10)}
                 </Typography>
-                <Typography>
+                <Typography variant="body2" sx={{fontStyle: "italic"}}>
                 {review.content}         
             </Typography>
             <br/>

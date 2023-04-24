@@ -38,7 +38,7 @@ const App = () => {
       </Container>
     </AppBar>
       <main className={css`
-        margin: 20px;
+        margin: 30px;
       `}>
         <MoviePage />
       </main>
