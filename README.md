@@ -4,7 +4,7 @@ It's written in Javascript and uses React, MobX and Material-UI.
 
 ### Installation
 You need to have Node.Js installed on your computer.
-Clone this repo and run 
+Clone this repo, insert your API key in the file movie.store.js and run 
 ```
 npm i
 ```
