@@ -1,3 +1,25 @@
+### Introduction
+This repo contains a simple Web App that displays trending movies thanks to [themoviedb](https://developers.themoviedb.org/3/movies).
+It's written in Javascript and used React, MobX and Material-UI.
+
+### Installation
+You need to have Node.Js installed on your computer
+Clone this repo and run 
+```
+npm i
+```
+
+### Run the UI
+To run the UI simply type
+ ```
+npm start
+```
+
+a browser window should open automatically
+
+enjoy !
+
+
 ### Context
 
 Richard always has a hard time deciding which movie to watch in the evening. He told us he wants:
