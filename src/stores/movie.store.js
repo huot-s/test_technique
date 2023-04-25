@@ -10,7 +10,7 @@ const trendingUrl = baseUrl + '/movie/popular?page=1&api_key=';
 const trendingUrlFrench = baseUrl + '/movie/popular?page=1&region=FR&api_key=';
 const reviewUrl = (id) => 'https://api.themoviedb.org/3/movie/' + id + '/reviews?api_key=';
 
-const apiKey = '02f4b2b8628683514845992b1dd931ba';
+const apiKey = 'PUT_YOUR_API_KEY_HERE';
 
 class MovieStore {
   
