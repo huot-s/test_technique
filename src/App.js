@@ -11,15 +11,12 @@ import LiveTvIcon from '@mui/icons-material/LiveTv';
 
 const App = () => {
   return (
-    <div className={css`
-      min-height: 100vh;
-      background-color: #F2F2F2;
-    `}>
-    <AppBar position="static">
-      <Container maxWidth="l">
-        <Toolbar disableGutters>
-          <LiveTvIcon sx={{ fontSize: 40,  mr: 2 }} />
-          <Typography
+    <div className={css`background-color: #F2F2F2;`}>
+      <AppBar position="static">
+        <Container maxWidth="l">
+          <Toolbar disableGutters>
+            <LiveTvIcon sx={{ fontSize: 40,  mr: 2 }} />
+            <Typography
             variant="h6"
             noWrap
             component="a"
@@ -30,16 +27,13 @@ const App = () => {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-            }}
-          >
-            ASK FOR MOVIE
-          </Typography>
-        </Toolbar>
-      </Container>
-    </AppBar>
-      <main className={css`
-        margin: 30px;
-      `}>
+            }}>
+              ASK FOR MOVIE
+            </Typography>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <main className={css`margin: 30px;`}>
         <MoviePage />
       </main>
     </div>

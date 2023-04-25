@@ -10,8 +10,8 @@ const stores = {
   movieStore: new MovieStore(),
 };
 
+// initial load of all movies
 stores.movieStore.queryListOfMovies();
-stores.movieStore.queryListOfGenres();
 
 ReactDOM.render(
   <React.StrictMode>
